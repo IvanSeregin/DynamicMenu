@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Project
+Bundle-SymbolicName: my.project;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: my.project.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.apache.felix.scr,
+ org.eclipse.equinox.event
+Bundle-RequiredExecutionEnvironment: JavaSE-17
+Automatic-Module-Name: my.project
+Bundle-ActivationPolicy: lazy

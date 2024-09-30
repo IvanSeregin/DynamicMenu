@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="my.project.Application">
+         </run>
+      </application>
+   </extension>
+   
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            class="my.project.Perspective"
+            name="RCP Perspective"
+            id="my.project.perspective">
+      </perspective>
+   </extension>
+   
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="menu:org.eclipse.ui.main.menu">
+         <menu
+               id="my.project.fileId"
+               label="File">
+            <command
+                  commandId="my.project.commandId"
+                  label="Show Message"
+                  style="push">
+            </command>
+         </menu>
+      </menuContribution>
+      <menuContribution
+            locationURI="toolbar:org.eclipse.ui.main.toolbar?after=additions">
+         <toolbar
+               id="my.project.sampleToolbar"
+               label="ToolBar">
+            <dynamic
+                  class="my.project.MyCompoundContributionItem"
+                  id="my.project.dynamicItem">
+            </dynamic>
+            <command
+                  commandId="my.project.commandId"
+                  label="Show Message"
+                  style="push">
+            </command>
+         </toolbar>
+      </menuContribution>
+   </extension>
+   
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            id="my.project.commandId"
+            name="Show Message">
+      </command>
+   </extension>
+   
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="my.project.MyHandler"
+            commandId="my.project.commandId">
+      </handler>
+   </extension>
+
+</plugin>
